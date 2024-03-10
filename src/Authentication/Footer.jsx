@@ -3,11 +3,11 @@
 function Footer() 
 {
     return(
-        <footer>
+        <h1>
             <p>
                 &copy; My Smart Food Choice
             </p>
-        </footer>
+        </h1>
     );
 }
 

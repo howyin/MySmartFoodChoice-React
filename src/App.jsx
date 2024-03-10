@@ -1,16 +1,17 @@
-import Header from './Authentication/Header.jsx'
 import Footer from './Authentication/Footer.jsx'
 import LoginPage from './Authentication/LoginPage.jsx';
 // need to import more component for the UI.
-import SignIn from './Authentication/SignIn.js';
-
+import SignIn from './Authentication/SignIn.jsx';
+import './App.css'
+import Header from './Authentication/Header.jsx';
 
 function App() 
 {
   return(
-    <h1>Hello, world!</h1>
+    <Header/>
+
+    
   );
 }
-
 
 export default App;
