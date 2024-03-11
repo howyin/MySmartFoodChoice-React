@@ -18,3 +18,8 @@
     size: 100%;
     margin-top: auto;
 }
+
+/* src/Authentication/App.css */
+.app {
+  font-family: 'Arial', sans-serif;
+}

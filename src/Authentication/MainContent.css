@@ -1,0 +1,9 @@
+/* src/Authentication/MainContent.css */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  
