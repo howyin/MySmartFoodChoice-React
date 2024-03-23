@@ -6,7 +6,7 @@ function Header()
     return (
         <nav className='nav'>
             <div className="header-content">
-                <h1 className='title'>Smart Food Choice</h1>
+                <h2 className='title'>Smart Food Choice</h2>
                 <ul className='nav-links'>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Review</a></li>

@@ -1,7 +1,6 @@
 // need to import more component for the UI.
 import './App.css'
 import Header from './Authentication/Header.jsx';
-import MainContent from './Authentication/MainContent.jsx';
 import LoginForm from './Authentication/LoginForm.jsx';
 
 function App() 

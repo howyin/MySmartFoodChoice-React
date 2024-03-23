@@ -1,9 +1,10 @@
 class UserAccount 
 {
-    constructor(email, password)
+    constructor(email, password, profilePicture)
     {
         this.email = email;
         this.password = password;
+        this.profilePicture = profilePicture;
     }
 
     get email()
