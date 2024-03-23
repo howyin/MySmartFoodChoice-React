@@ -1,27 +1,33 @@
 // src/Authentication/LoginForm.jsx
 import React, { useState } from 'react';
-import { auth } from '../Firebase/Firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link } from 'react-router-dom';
 import './LoginForm.css';
 
 function LoginForm() 
 {
-  const [username, setUsername] = useState(''); 
+  // for setting up the state for email and password
+  const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState(''); 
+  
+  const loginAsGuest = () => 
+  {
+    // TODO: login as guest here
+  }
 
   return (
     <div className="login-container">
       <div className="login-form">
         <h2 className='login-title'>Login</h2>
 
-        <h3 className='username-container'>Username</h3>
+        <h3 className='email-container'>Email</h3>
 
         <div className="input-group"> 
           <input
               type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Please enter email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
         </div>
 
@@ -30,7 +36,7 @@ function LoginForm()
         <div className="input-group">
           <input
               type="password"
-              placeholder="Password"
+              placeholder="Please enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -46,11 +52,18 @@ function LoginForm()
 
         <div className="divider">OR</div>
 
-        <button className='guest-login-button' type="button">Login as guest</button>
+        <div className='signup-link'>
+          <Link className="guest-login-link"
+              to="#"
+              onClick={loginAsGuest}>
+              Login as guest
+          </Link>
+        </div>
 
         <div className="signup-link">
-          Need an Account? <a href="#">SIGN UP</a>
+          Need an Account? <Link to="/SignUp">SIGN UP</Link>
         </div>
+        
       </div>
     </div>
   );

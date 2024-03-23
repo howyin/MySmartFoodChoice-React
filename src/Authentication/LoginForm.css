@@ -31,7 +31,7 @@
     margin-left: 25px;
   }
 
-  .username-container {
+  .email-container {
     color: black;
     margin-left: 25px;
   }
@@ -90,9 +90,10 @@
     color: black;
   }
 
-  .guest-login-button {
-    background-color: dodgerblue;
+  .guest-login-link {
     color: black;
+    text-decoration: none;
+    font-weight: bold;
   }
   
   .divider {

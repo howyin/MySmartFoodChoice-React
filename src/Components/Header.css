@@ -13,13 +13,27 @@
     
 }
 
+.nav-user-operations {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-user-operations li {
+    margin-right: 50px;
+}
+
+.nav-user-operations li a {
+    color: black;
+    text-decoration: none;
+}
+
 .nav-links {
     list-style-type: none;
     display: flex;
 }
 
 .nav-links li {
-    margin-right: 20px;
+    margin-right: 80px;
 }
 
 .nav-links li a {
