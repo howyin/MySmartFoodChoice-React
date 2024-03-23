@@ -2,18 +2,12 @@
 import React, { useState } from 'react';
 import { auth } from '../Firebase/Firebase';
 import { signInWithEmailAndPassword } from "firebase/auth";
-
-
 import './LoginForm.css';
 
 function LoginForm() 
 {
-  {/* this one we need to bind the value to the state, 
-      '' stands for string specify the type in argument */}
-
-  const [username, setUsername] = useState(''); {/* username, this is a comment */}
-  const [password, setPassword] = useState(''); {/* password */}
-  const [rememberMe, setRememberMe] = useState(false); {/* rememberMe */}
+  const [username, setUsername] = useState(''); 
+  const [password, setPassword] = useState(''); 
 
   return (
     <div className="login-container">

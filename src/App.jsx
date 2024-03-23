@@ -2,14 +2,16 @@
 import './App.css'
 import Header from './Authentication/Header.jsx';
 import LoginForm from './Authentication/LoginForm.jsx';
-
+import Test from './Test/Card.jsx';
+// some components are not showing up.
 function App() 
 {
+  // the part 
   return(
-    <div className='app'>
-        <Header/>
-        <LoginForm/>
-    </div>
+    <>
+      <Header/>
+      <LoginForm/>
+    </>
   );
 }
 
