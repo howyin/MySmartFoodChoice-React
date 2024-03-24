@@ -1,0 +1,20 @@
+.about-us-container {
+    max-width: max-content;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    background-color: dodgerblue;
+}
+
+.about-us-title {
+    font-size: 2rem;
+    text-align: center;
+    color: #ece7e7;
+}
+
+.about-us-description {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #e7e4e4;
+    line-height: 1.6;
+}

@@ -12,9 +12,10 @@ function LoginForm()
   
   const loginAsGuest = () => 
   {
-    // TODO: login as guest here
+    // TODO: this will link to that part?
+    window.location.href = "/GuestPage";
   }
-
+  
   return (
     <div className="login-container">
       <div className="login-form">
@@ -41,6 +42,7 @@ function LoginForm()
               onChange={(e) => setPassword(e.target.value)}
             />
         </div>
+
         <div className="remember-me">
           <input type="checkbox" id="rememberMe" />
           <label htmlFor="rememberMe">Remember me?</label>

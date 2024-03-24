@@ -1,0 +1,38 @@
+.project-info-container {
+    max-width: 600px;
+    margin: auto;
+    margin-left: 400px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(232, 236, 240);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-info-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.project-info-links {
+    margin-bottom: 20px;
+}
+
+.project-info-link {
+    display: block;
+    margin-bottom: 10px;
+    color: #620be5;
+    text-decoration: none;
+}
+
+.project-info-link:hover {
+    text-decoration: underline;
+}
+
+.project-info-advertisement {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}

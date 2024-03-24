@@ -1,0 +1,46 @@
+.partnership-container {
+    max-width: 800px;
+    margin: auto;
+    margin-left: 300px;
+    padding: 50px;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.partnership-title {
+    font-size: 2rem;
+    color: #f5f1f1;
+}
+
+.partnership-description {
+    font-size: 1.2rem;
+    color: #f0efef;
+    line-height: 1.6;
+}
+
+.partnership-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+button.submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.submit-button:hover {
+    background-color: #0056b3;
+}
