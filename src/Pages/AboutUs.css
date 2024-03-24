@@ -1,9 +1,8 @@
 .about-us-container {
     max-width: max-content;
     margin: auto;
-    padding: 20px;
+    padding: 100px;
     text-align: center;
-    background-color: dodgerblue;
 }
 
 .about-us-title {

@@ -1,13 +1,11 @@
 import Header from '../Components/Header.jsx';
-import LoginForm from '../Authentication/LoginForm.jsx';
-import ProjectInfo from '../Advertisement/ProjectInfo.jsx';
-
+import SignUpForm from './SignUpForm.jsx';
 
 function Home() {
     return (
         <>
             <Header />
-            <ProjectInfo />
+            <SignUpForm />            
         </>
     );
 }

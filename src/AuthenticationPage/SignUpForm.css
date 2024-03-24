@@ -2,8 +2,9 @@
 
 .signup-form {
   display: auto;
-  position: absolute;
-  margin-bottom: 25px;
+  
+  margin-left: 570px;
+  margin-top: 80px;
   bottom: 10%;
   left: 75%;
   align-items: center;
@@ -41,6 +42,16 @@
   margin-left: 25px;
 }
 
+.contact-container{
+  color: black;
+  margin-left: 25px;
+}
+
+.user-type-container{
+  color: black;
+  margin-left: 25px;
+}
+
 .form-group {
   margin-left: 20px;
   margin-bottom: 15px;
@@ -62,8 +73,8 @@
   border: none;
   border-radius: 20px;
   background: fixed;
-  background-color: rgb(7, 175, 226);
-  color: dodgerblue;
+  background-color: dodgerblue;
+  color: white;
   cursor: pointer;
   margin-bottom: 10px;
 }

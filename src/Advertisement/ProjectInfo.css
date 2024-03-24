@@ -1,13 +1,16 @@
 .project-info-container {
     max-width: 600px;
     margin: auto;
-    margin-left: 400px;
+
+    margin-left: 500px;
     padding: 20px;
     text-align: center;
-    background-color: rgb(232, 236, 240);
+    background-color: dodgerblue;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+/* change the margin-left to move all info container.*/
 
 .project-info-title {
     font-size: 2rem;

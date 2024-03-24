@@ -10,7 +10,6 @@
 
 .title {
     color: black;
-    
 }
 
 .nav-user-operations {
@@ -30,6 +29,7 @@
 .nav-links {
     list-style-type: none;
     display: flex;
+    margin-right: 700px;
 }
 
 .nav-links li {
@@ -44,6 +44,9 @@
 
 .header-content {
     display: flex;
+    margin: auto;
+    margin-left: 50px;
+    color:black;
     justify-content: space-between;
     align-items: center;
 }

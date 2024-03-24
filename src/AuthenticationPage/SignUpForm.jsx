@@ -7,6 +7,8 @@ function SignUpForm() {
   const [password, setPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const [contactNumber, setContactNumber] = useState('');
+  const [userType, setUserType] = useState('user');
 
   // href can be used.
   return (
@@ -54,9 +56,27 @@ function SignUpForm() {
             />
         </div>
 
+        <div className="form-group">
+          <label htmlFor="contactNumber" className="contact-container">Contact Number</label>
+          <input
+              type="text"
+              placeholder="Please enter contact number"
+              value={contactNumber}
+              onChange={(e) => setContactNumber(e.target.value)}
+            />
+        </div>
 
-        
+        <div className="form-group">
+          <label htmlFor="userType" className="user-type-container">User Type</label>
+          <select id="userType" value={userType} onChange={(e) => setUserType(e.target.value)}>
+            <option value="user">User</option>
+            <option value="vendorDietitian">Vendor (Dietitian)</option>
+            <option value="vendorTrainer">Vendor (Trainer)</option>
+          </select>
+        </div>
 
+        <button className="button" type="submit">Sign Up</button>
+    
       </form>
       <p className="signup-link">Already have an account? 
           <a href="/">Sign in</a>

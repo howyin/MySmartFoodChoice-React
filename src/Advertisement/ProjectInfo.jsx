@@ -17,7 +17,7 @@ function ProjectInfo() {
                     APK Download Link
                 </a>
             </div>
-            <p className="project-info-advertisement">Advertisement Message: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p className="project-info-advertisement">Discover the Food Choice App - Analyze Your Food Intake!</p>
         </div>
     );
 }

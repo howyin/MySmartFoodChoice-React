@@ -1,0 +1,50 @@
+.image{
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.imageDropDownSmall{
+    width: 5%;
+    height: auto;
+}
+
+.title{
+    color: black;
+    font-size: 10px;
+}
+
+.titleCenter{
+    display: flex;
+    color: black;
+    font-size: 10px;
+    justify-content: center;
+}
+
+.pie{
+    /*transform: rotate(120deg); */
+    width: 30%;
+    height: 30%;
+    margin: 0 auto; /* Center horizontally */
+    display: flex;
+    justify-content: space-around;
+}
+
+.userReview{
+    color: black;
+    text-align: center;
+    width: 500px; /* Set a specific width */
+    height: max-content; /* Set a specific height */
+    padding: 10px; /* Make userReview smaller size */
+    background-color: lightgray; /* Add background color to userReview */
+    border-radius: 50px; /* Make userReview rounded and smaller in radius */
+}
+
+.avatar-image{
+    margin-top: 5px;
+    width: 14%;
+    display: flex;
+}
+/* here is the place where all style can be applied to the landing page. */
+
+
