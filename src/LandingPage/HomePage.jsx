@@ -27,7 +27,6 @@ export const HomePage = () => {
                 </div>
     */
 
-
     return (
         <div>
             <center>

@@ -15,6 +15,9 @@ function App()
       <Home/>
       
     </div> route is for registering the path for the components.
+     we need to remove the /SignUp and /SignIn routes.
+     add in the promotional part
+
     */
     <BrowserRouter>
       <Routes>
