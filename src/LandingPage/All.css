@@ -1,50 +1,88 @@
-.image{
+:root {
+    --primary-color: #4CAF50; /* Fresh green for primary actions, suitable for dark background */
+    --text-color: #E0E0E0; /* Lighter text for better readability on dark backgrounds */
+    --background-light: #37474F; /* Softer dark background for main content areas */
+    --background-dark: #263238; /* Even darker shade for elements like user reviews */
+    --accent-color: #FFC107; /* Bright accent color for important components, stands out in dark mode */
+    --border-radius: 15px; /* Modern, rounded corners for all elements */
+    --font-size-regular: 16px; /* Regular text size */
+    --font-size-small: 14px; /* Smaller text size for less prominent text */
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-center {
+    text-align: center; /* Center text and inline elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center flex items */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-dark);
+    line-height: 1.6;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.image, .imageDropDownSmall, .avatar-image img {
+    border-radius: var(--border-radius);
+}
+
+.image {
     width: 100%;
     height: auto;
     margin: auto;
 }
 
-.imageDropDownSmall{
+.imageDropDownSmall {
     width: 5%;
     height: auto;
 }
 
-.title{
-    color: black;
-    font-size: 10px;
+.title, .titleCenter {
+    color: var(--text-color);
+    font-size: var(--font-size-small);
+    margin: 10px 0;
 }
 
-.titleCenter{
+.titleCenter {
     display: flex;
-    color: black;
-    font-size: 10px;
     justify-content: center;
 }
 
-.pie{
-    /*transform: rotate(120deg); */
+.pie, .userReview {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
+    margin: 20px auto;
+    padding: var(--primary-padding);
+}
+
+.pie {
     width: 30%;
     height: 30%;
-    margin: 0 auto; /* Center horizontally */
     display: flex;
     justify-content: space-around;
 }
 
-.userReview{
-    color: black;
+.userReview {
+    width: 500px; /* Specific width */
+    height: max-content; /* Auto-adjust height */
     text-align: center;
-    width: 500px; /* Set a specific width */
-    height: max-content; /* Set a specific height */
-    padding: 10px; /* Make userReview smaller size */
-    background-color: lightgray; /* Add background color to userReview */
-    border-radius: 50px; /* Make userReview rounded and smaller in radius */
 }
 
-.avatar-image{
-    margin-top: 5px;
-    width: 14%;
-    display: flex;
+.avatar-image {
+    margin-top: 10px;
+    width: 80px; /* Fixed size for avatars */
+    height: 80px; /* Ensures square aspect ratio for consistency */
+    display: block;
+    margin: auto; /* Centers the avatar images */
+    border-radius: 50%; /* Circular avatars */
+    object-fit: cover; /* Ensures proper fit without stretching */
 }
-/* here is the place where all style can be applied to the landing page. */
-
-
