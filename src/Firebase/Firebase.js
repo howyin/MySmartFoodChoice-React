@@ -16,21 +16,24 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
 
-  apiKey: "AIzaSyAmbpmFE5kvadKbQOXJrxpe6gHbs94BoAc",
+  apiKey: "AIzaSyB-ivqhXPZw7ZpT9Ojl08E9TW2bQVAr_rQ",
 
-  authDomain: "mysmartfoodchoice-react.firebaseapp.com",
+  authDomain: "myfoodchoice-dc7bd.firebaseapp.com",
 
-  projectId: "mysmartfoodchoice-react",
+  databaseURL: "https://myfoodchoice-dc7bd-default-rtdb.asia-southeast1.firebasedatabase.app",
 
-  storageBucket: "mysmartfoodchoice-react.appspot.com",
+  projectId: "myfoodchoice-dc7bd",
 
-  messagingSenderId: "508842963693",
+  storageBucket: "myfoodchoice-dc7bd.appspot.com",
 
-  appId: "1:508842963693:web:b2a56bc4eacff928b112e4",
+  messagingSenderId: "316923369990",
 
-  measurementId: "G-MN2R3ZB90F"
+  appId: "1:316923369990:web:93a713295c21bc39da4187",
+
+  measurementId: "G-0ZD96GDHTL"
 
 };
+
 
 
 // Initialize Firebase, must everything after app const.
