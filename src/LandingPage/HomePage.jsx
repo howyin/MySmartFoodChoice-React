@@ -37,7 +37,6 @@ export const HomePage = () => {
                 <Graph/>
                 <Title/>
                 
-                 the problem is that the elements can be together 
                 <div style={{ display: 'flex'}}>
                     <div style={{ marginLeft: '20px' }}  >
                         <Avatar />

@@ -1,9 +1,8 @@
 // Import the functions you need from the SDKs you need
 
 import { initializeApp } from "firebase/app";
-
 import { getDatabase } from "firebase/database";
-
+import { getFirestore } from 'firebase/firestore';
 import { getAuth } from "firebase/auth";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -15,28 +14,24 @@ import { getAuth } from "firebase/auth";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-
-  apiKey: "AIzaSyAmbpmFE5kvadKbQOXJrxpe6gHbs94BoAc",
-
-  authDomain: "mysmartfoodchoice-react.firebaseapp.com",
-
-  projectId: "mysmartfoodchoice-react",
-
-  storageBucket: "mysmartfoodchoice-react.appspot.com",
-
-  messagingSenderId: "508842963693",
-
-  appId: "1:508842963693:web:b2a56bc4eacff928b112e4",
-
-  measurementId: "G-MN2R3ZB90F"
-
+  apiKey: "AIzaSyB-ivqhXPZw7ZpT9Ojl08E9TW2bQVAr_rQ",
+  authDomain: "myfoodchoice-dc7bd.firebaseapp.com",
+  databaseURL: "https://myfoodchoice-dc7bd-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "myfoodchoice-dc7bd",
+  storageBucket: "myfoodchoice-dc7bd.appspot.com",
+  messagingSenderId: "316923369990",
+  appId: "1:316923369990:web:93a713295c21bc39da4187",
+  measurementId: "G-0ZD96GDHTL"
 };
 
 
-// Initialize Firebase, must everything after app const.
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-export const app = initializeApp(firebaseConfig);
+// Initialize Firestore
+const db = getFirestore(app);
 
-export const db = getDatabase(app);
+// Initialize Firebase Authentication
+const auth = getAuth(app);
 
-export const auth = getAuth(app);
+export { db, auth };

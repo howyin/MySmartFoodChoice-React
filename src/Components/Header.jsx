@@ -24,6 +24,7 @@ function Header()
 
                     <li><Link to="/SignIn">Log In</Link></li>
                     <li><Link to="/SignUp">Sign Up</Link></li>
+                    <li><Link to="/ReviewForm">Leave a Review</Link></li>
                 </ul>
             </div>
         </nav>

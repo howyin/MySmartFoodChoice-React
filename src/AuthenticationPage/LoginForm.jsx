@@ -1,121 +1,94 @@
-// src/Authentication/LoginForm.jsx
 import React, { useState } from 'react';
-import {signInWithEmailAndPassword } from "firebase/auth";
-import { Link } from 'react-router-dom'; // Import useHistory from react-router-dom
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useNavigate } from 'react-router-dom';
 import './LoginForm.css';
-import { auth } from '../Firebase/Firebase'; // Import the firebase auth instance
+import { auth } from '../Firebase/Firebase'; // Ensure this path is correct for your Firebase configuration
 
-function LoginForm() 
-{
-  // for setting up the state for email and password
+function LoginForm() {
   const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
+  const [userType, setUserType] = useState('user'); // Added back userType state
+  const navigate = useNavigate(); // Initialize navigate hook for programmatically navigating
 
-  const loginAsGuest = () => 
-  {
-    // TODO: this will link to that part?
-    window.location.href = "/GuestPage";
-  }
-
-  const handleLogin = async () => 
-  {
-    try 
-    {
-      await signInWithEmailAndPassword(auth, email, password); // Use firebase signInWithEmailAndPassword method
+  // Handle form submission for login
+  const handleLogin = async (event) => {
+    event.preventDefault(); // Prevent the default form submission behavior
+    try {
+      await signInWithEmailAndPassword(auth, email, password); // Attempt to sign in with email and password
       console.log("Login successful");
-      console.log("Email: " + email);
-      console.log("Password: " + password);
 
-      const selectedType = document.getElementById('logInAs').value; // Get the selected value from the dropdown
-
-      switch (selectedType) 
-      {
+      // Navigate to different pages based on user type
+      switch(userType) {
         case 'user':
-          // Handle login logic for user type
-
+          navigate('/'); // Adjust as necessary
           break;
         case 'vendorDietitian':
-
-          // Handle login logic for vendor (Dietitian) type
+          navigate('/dietitianDashboard'); // Adjust as necessary
           break;
         case 'vendorTrainer':
-          // Handle login logic for vendor (Trainer) type
-
+          navigate('/trainerDashboard'); // Adjust as necessary
           break;
         default:
-          // Handle default case
-
-          break;
+          navigate('/'); // Default navigation
       }
-    } 
-    catch (error) 
-    {
-      console.log("Login failed");
-      console.error(error);
+
+    } catch (error) {
+      console.error("Login failed:", error.message); // Log any error
+      // Consider setting an error state here to display the error message to the user
     }
-  }
-  
+  };
+
   return (
-    
     <div className="login-container">
       <div className="login-form">
         <h2 className='login-title'>Login</h2>
-        <h3 className='email-container'>Email</h3>
-
-        <div className="input-group"> 
-          <input
-              type="text"
-              placeholder="Please enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+        <form onSubmit={handleLogin}>
+          <div className="input-group">
+            <label className='email-container'>Email</label>
+            <input
+                type="email"
+                placeholder="Please enter email"
+                value={email}
+                required
+                onChange={(e) => setEmail(e.target.value)}
             />
-        </div>
+          </div>
 
-        <h3 className='password-container'>Password</h3>
-
-        <div className="input-group">
-          <input
-              type="password"
-              placeholder="Please enter password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+          <div className="input-group">
+            <label className='password-container'>Password</label>
+            <input
+                type="password"
+                placeholder="Please enter password"
+                value={password}
+                required
+                onChange={(e) => setPassword(e.target.value)}
             />
-        </div>
+          </div>
 
-        <div className="dropdown">
+          <div className="dropdown">
             <label htmlFor="logInAs">Log In As:</label>
-            <select id="logInAs">
+            <select id="logInAs" value={userType} onChange={(e) => setUserType(e.target.value)}>
               <option value="user">User</option>
               <option value="vendorDietitian">Vendor (Dietitian)</option>
               <option value="vendorTrainer">Vendor (Trainer)</option>
             </select>
-        </div>
+          </div>
 
-        <div className="remember-me">
-          <input type="checkbox" id="rememberMe" />
-          <label htmlFor="rememberMe">Remember me?</label>
-        </div>
+          <div className="remember-me">
+            <input type="checkbox" id="rememberMe" />
+            <label htmlFor="rememberMe">Remember me?</label>
+          </div>
 
-        <button className='login-button' type="submit" onClick={handleLogin}>LOGIN</button>
+          <button className='login-button' type="submit">LOGIN</button>
+        </form>
 
         <a href="#" className="forgot-password">Forget Password?</a>
 
         <div className="divider">OR</div>
 
-        
-
         <div className='signup-link'>
-          <Link className="guest-login-link"
-              to="#"
-              onClick={loginAsGuest}>
-              Login as guest
-          </Link>
-        </div>
-
-        <div className="signup-link">
           Need an Account? <Link to="/SignUp">SIGN UP</Link>
         </div>
-        
       </div>
     </div>
   );
