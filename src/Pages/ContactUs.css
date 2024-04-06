@@ -1,44 +1,75 @@
-.contact-us-container {
-    max-width: 400px;
-    margin: auto;
-    margin-left: 450px;
-    padding: 100px;
+.contact-us-page {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the page content takes at least the full height of the viewport */
+    margin: 0;
+    padding: 20px;
+    background-color: #282c34; /* Assuming a dark background, change as necessary */
+    color: #ffffff; /* Light text color for contrast */
+}
+
+.contact-us-content {
     text-align: center;
-    border-radius: 50px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Adjust the max width as necessary */
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.contact-us-title {
-    font-size: 2.5rem;
-    color: #f3f1f1;
-    margin-bottom: 20px;
+.contact-details {
+    margin-bottom: 30px;
+    font-style: italic;
 }
 
-.contact-us-description {
-    font-size: 1.2rem;
-    color: #fffefe;
-    line-height: 1.6;
-    margin-bottom: 20px;
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* Space between form fields */
 }
 
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
+.form-group label {
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
 }
 
-button.submit-button {
+.form-group input, .form-group textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 90%; /* Adjust the width as necessary */
+    text-align: center; /* Center text if desired, but usually left-aligned is standard for usability */
+    margin: 0 auto; /* Center the input field */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
     background-color: #007bff;
-    color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
+    width: 200px; /* Set a fixed width for the button */
+    margin: 20px auto; /* Center the button */
 }
 
-button.submit-button:hover {
+button:hover {
     background-color: #0056b3;
 }
