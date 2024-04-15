@@ -18,10 +18,7 @@ function AboutUs() {
                     <div className="intro-text">
                         <h2>Welcome to Our Site!</h2>
                         <p>
-                            We are a team of passionate developers who love to create amazing web applications. 
-                            Our goal is to provide the best user experience and make your life easier. 
-                            We are constantly learning and improving our skills to stay up to date with the latest technologies. 
-                            Thank you for visiting our website and we hope you enjoy your stay!
+                            MyFoodChoice is the application to help you realize your health goals.
                         </p>
                     </div>
                 </section>

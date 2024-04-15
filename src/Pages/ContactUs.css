@@ -73,3 +73,18 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100; /* Ensures it appears above other content */
+    text-align: center;
+}
+
+
