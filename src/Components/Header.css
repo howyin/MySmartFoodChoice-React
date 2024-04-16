@@ -1,52 +1,57 @@
 .nav {
     background-color: dodgerblue;
-    /* Add other styles as needed */
-    position: absolute;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 10;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.header-content {
+    align-items: center;
+
+    padding: 10px 20px; /* Adjust padding here */
+}
 
 .title {
-    color: black;
-}
-
-.nav-user-operations {
-    list-style-type: none;
-    display: flex;
-}
-
-.nav-user-operations li {
-    margin-right: 50px;
-}
-
-.nav-user-operations li a {
-    color: black;
-    text-decoration: none;
+    font-size: 20px; /* Adjust font size as needed */
 }
 
 .nav-links {
     list-style-type: none;
     display: flex;
-    margin-right: 700px;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-links li {
-    margin-right: 80px;
+    padding: 10px 20px; /* Adjust padding for navigation links */
 }
 
 .nav-links li a {
-    color: black;
+    color: white;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
 }
 
 
-.header-content {
-    display: flex;
-    margin: auto;
-    margin-left: 50px;
-    color:black;
-    justify-content: space-between;
-    align-items: center;
+@media (max-width: 768px) {
+    .nav-user-operations,
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        margin-right: 0;
+    }
+
+    .nav-user-operations li,
+    .nav-links li {
+        margin-right: 0;
+    }
 }

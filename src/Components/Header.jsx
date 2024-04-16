@@ -9,7 +9,6 @@ function Header()
     return (
         <nav className='nav'>
             <div className="header-content">
-                <h1 className='title' style={{fontSize: '1.5em'}}>Smart Food Choice</h1>
                 <ul className='nav-links'>
 
                     <li><Link to="/">
@@ -18,7 +17,7 @@ function Header()
                             height="20">
                             
                         </img>
-                        Home
+                        Smart Food Choice
                         </Link>
                     </li>
 

@@ -3,28 +3,29 @@
 .signup-form {
   display: auto;
   
-  margin-left: 570px;
-  margin-top: 80px;
+  margin-left: 25%;
+  margin-top: 40px;
   bottom: 10%;
   left: 75%;
   align-items: center;
   background-color: rgba(115, 201, 255, 0.985);
   border-radius: 20px; /* Make the layout rounded */
-  padding-right: 20px; /* Add some padding on the right for aesthetics */
+  padding-right: 40px; /* Add some padding on the right for aesthetics */
   padding-left: 10px;
   border-radius: 10px; /* Keep the form itself rounded */
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 300px;
+  width: 400px;
 }
 
 .signup-title {
   color: black;
-  margin-left: 70%;
+  margin-left: 40%;
+  align-items: center;
 }
 
 .signup-form h2 {
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
 }
 
 .email-container {
@@ -68,8 +69,12 @@
 }
 
 .button {
-  width: 100%;
-  padding: 10px;
+  display: auto;
+  
+  margin-left: 25%;
+  margin-top: 20px;
+  bottom: 10%;
+  left: 75%;
   border: none;
   border-radius: 20px;
   background: fixed;
