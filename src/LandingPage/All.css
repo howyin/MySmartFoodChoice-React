@@ -75,6 +75,7 @@ body {
     width: 500px; /* Specific width */
     height: max-content; /* Auto-adjust height */
     text-align: center;
+    margin: 0 auto; /* Center the div */
 }
 
 .avatar-image {

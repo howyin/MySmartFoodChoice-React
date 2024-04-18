@@ -33,6 +33,7 @@ function AboutUs() {
                             <p>Short description about the team member.</p>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>

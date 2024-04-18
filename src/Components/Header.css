@@ -12,20 +12,6 @@
     color: black;
 }
 
-.nav-user-operations {
-    list-style-type: none;
-    display: flex;
-}
-
-.nav-user-operations li {
-    margin-right: 50px;
-}
-
-.nav-user-operations li a {
-    color: black;
-    text-decoration: none;
-}
-
 .nav-links {
     list-style-type: none;
     display: flex;
@@ -33,7 +19,7 @@
 }
 
 .nav-links li {
-    margin-right: 80px;
+    margin-right: 20px;
 }
 
 .nav-links li a {
@@ -44,7 +30,7 @@
 
 .header-content {
     display: flex;
-    margin: auto;
+    margin: 10px;
     margin-left: 50px;
     color:black;
     justify-content: space-between;
