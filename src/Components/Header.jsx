@@ -21,10 +21,9 @@ function Header()
                         Home
                         </Link>
                     </li>
-
-                    <li><Link to="/SignIn">Log In</Link></li>
-                    <li><Link to="/SignUp">Sign Up</Link></li>
                     <li><Link to="/ReviewForm">Leave a Review</Link></li>
+                    <li><Link to="/AboutUs">About Us</Link></li>
+                    <li><Link to="/ContactUs">Contact Us</Link></li>
                 </ul>
             </div>
         </nav>

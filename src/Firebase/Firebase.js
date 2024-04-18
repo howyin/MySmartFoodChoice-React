@@ -13,7 +13,8 @@ import { getAuth } from "firebase/auth";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-const firebaseConfig = {
+const firebaseConfig = 
+{
   apiKey: "AIzaSyB-ivqhXPZw7ZpT9Ojl08E9TW2bQVAr_rQ",
   authDomain: "myfoodchoice-dc7bd.firebaseapp.com",
   databaseURL: "https://myfoodchoice-dc7bd-default-rtdb.asia-southeast1.firebasedatabase.app",
