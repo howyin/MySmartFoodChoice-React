@@ -5,6 +5,9 @@ import ReviewForm from './ReviewPage/ReviewForm.jsx';
 import AboutUs from './Pages/AboutUs.jsx';
 import ContactUs from './Pages/ContactUs.jsx';
 
+/* don't delete this import */
+import './App.css';
+
 function App() 
 {
   // remove login and logout
