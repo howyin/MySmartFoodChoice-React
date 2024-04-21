@@ -4,7 +4,6 @@ import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../Firebase/Firebase'; // Adjust this import path to where your Firebase config and instances are defined
 import './SignUpForm.css'; // Ensure the CSS file is correctly linked
 import { useNavigate } from 'react-router-dom';
-import { DatabaseReference } from 'firebase/database';
 
 function SignUpForm() {
   const [email, setEmail] = useState('');
@@ -26,9 +25,30 @@ function SignUpForm() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       // we need to record the userID to record.
       // to use realtime database, use this var below.
-      const databaseRefUserAccount = DatabaseReference.ref('/User Accounts/{userId}');
+      // const databaseRefUserAccount = DatabaseReference.ref('/User Accounts/{userId}');
       const user = userCredential.user;
 
+      /*
+      // Check how to test databaseRefUserAccount
+      databaseRefUserAccount.once('value', (snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+        } else {
+          console.log("No data available");
+        }
+      });
+
+      // Test for inputing a data inside of databaseRefUserAccount
+      databaseRefUserAccount.set
+      ({
+        firstName,
+        lastName,
+        email,
+        contactNumber,
+        userType
+      });
+
+      */
 
       // the below is firestore not the realtime database
       // Store additional user details in Firestore under the 'users' collection
@@ -40,7 +60,6 @@ function SignUpForm() {
         contactNumber,
         userType
       });
-
       console.log("Account created and additional information stored successfully");
       navigate('/'); // Redirect to the homepage or dashboard after successful signup
     } catch (error) {

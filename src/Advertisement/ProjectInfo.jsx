@@ -1,7 +1,10 @@
 import React from 'react';
 import '../Advertisement/ProjectInfo.css'
 
-function ProjectInfo() {
+function ProjectInfo() 
+{
+
+    // this part haven't imported yet.
     return (
         <div className="project-info-container">
             <h2 className="project-info-title">Project Information</h2>
