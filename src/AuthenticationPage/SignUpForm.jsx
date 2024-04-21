@@ -4,6 +4,7 @@ import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../Firebase/Firebase'; // Adjust this import path to where your Firebase config and instances are defined
 import './SignUpForm.css'; // Ensure the CSS file is correctly linked
 import { useNavigate } from 'react-router-dom';
+import { DatabaseReference } from 'firebase/database';
 
 function SignUpForm() {
   const [email, setEmail] = useState('');
@@ -19,13 +20,20 @@ function SignUpForm() {
     event.preventDefault();
     setError('');
 
-    try {
+    try 
+    {
       // Create user with email and password using Firebase Authentication
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // we need to record the userID to record.
+      // to use realtime database, use this var below.
+      const databaseRefUserAccount = DatabaseReference.ref('/User Accounts/{userId}');
       const user = userCredential.user;
 
+
+      // the below is firestore not the realtime database
       // Store additional user details in Firestore under the 'users' collection
-      await setDoc(doc(db, "users", user.uid), {
+      await setDoc(doc(db, "users", user.uid), 
+      {
         firstName,
         lastName,
         email, // Optional: Firebase Authentication already stores the email, but you might store it for easier querying
