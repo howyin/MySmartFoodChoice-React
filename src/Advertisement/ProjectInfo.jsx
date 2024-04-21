@@ -3,7 +3,6 @@ import '../Advertisement/ProjectInfo.css'
 
 function ProjectInfo() 
 {
-
     // this part haven't imported yet.
     return (
         <div className="project-info-container">

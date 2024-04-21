@@ -1,4 +1,4 @@
-import Header from "../Components/Header";
+import Header from "../HeaderComponents/Header";
 import ProjectInfo from "../Advertisement/ProjectInfo";
 import Graph from "./Graph";
 import Image from "./Image";

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { collection, addDoc } from "firebase/firestore";
 import { Link, useNavigate } from 'react-router-dom'; // Consolidated import for useNavigate
 import './ReviewForm.css';
-import Header from '../Components/Header';
+import Header from '../HeaderComponents/Header';
 import { db } from "../Firebase/Firebase";
 
 function ReviewForm() 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
-import Header from '../Components/Header';
+import Header from '../HeaderComponents/Header';
 import { db } from '../Firebase/Firebase';
 import { collection, addDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom'; // Import for redirecting the user
