@@ -4,6 +4,8 @@ import { HomePage } from './LandingPage/HomePage.jsx';
 import ReviewForm from './ReviewPage/ReviewForm.jsx';
 import AboutUs from './Pages/AboutUs.jsx';
 import ContactUs from './Pages/ContactUs.jsx';
+import HomeSignInPage from './AuthenticationPage/HomeSignInPage.jsx';
+import HomeSignUpPage from './AuthenticationPage/HomeSignUpPage.jsx';
 
 /* don't delete this import */
 import './App.css';
@@ -21,6 +23,9 @@ function App()
         <Route path = "/ReviewForm" element={<ReviewForm />} /> 
         <Route path = "/AboutUs" element={<AboutUs />} /> 
         <Route path = "/ContactUs" element={<ContactUs />} /> 
+        <Route path="/SignUp" element={<HomeSignUpPage />} />
+        <Route path="/SignIn" element={<HomeSignInPage />} />
+
         {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
