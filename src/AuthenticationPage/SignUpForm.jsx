@@ -3,7 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../Firebase/Firebase'; // Adjust this import path to where your Firebase config and instances are defined
 import './SignUpForm.css'; // Ensure the CSS file is correctly linked
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link  } from 'react-router-dom';
 
 function SignUpForm() {
   const [email, setEmail] = useState('');
@@ -108,6 +108,7 @@ function SignUpForm() {
         <button className="button" type="submit">Sign Up</button>
       </form>
       <p className="signup-link">Already have an account? <a href="/signin">Sign in</a></p>
+      <p className="guest-link">Continue as Guest? <Link to="/guest">Click Here</Link></p>
     </div>
   );
 }
