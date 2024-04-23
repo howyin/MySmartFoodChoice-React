@@ -1,7 +1,7 @@
 import Header from '../Components/Header.jsx';
 import SignUpForm from './SignUpForm.jsx';
 
-function Home() {
+function HomeSignUpPage() {
     return (
         <>
             <Header />
@@ -10,5 +10,5 @@ function Home() {
     );
 }
 
-export default Home;
+export default HomeSignUpPage;
 
