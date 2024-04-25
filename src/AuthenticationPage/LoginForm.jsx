@@ -58,7 +58,7 @@ function LoginForm() {
       switch(userType) {
         case 'user':
           window.alert("User Login succesful ");
-          navigate('/userDashboard');
+          navigate('/');
           break;
         case 'vendorDietitian':
           window.alert("Dietician Login succesful ");

@@ -80,6 +80,7 @@ button.login-button:hover {
 .forgot-password a, .signup-link a {
   color: black; /* Link color */
   text-decoration: none; /* No underline */
+  text-align: center;
 }
 
 .signup-link a {
