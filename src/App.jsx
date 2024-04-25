@@ -7,6 +7,9 @@ import ContactUs from './Pages/ContactUs.jsx';
 import HomeSignInPage from './AuthenticationPage/HomeSignInPage.jsx';
 import HomeSignUpPage from './AuthenticationPage/HomeSignUpPage.jsx';
 import Guest from './Pages/Guest.jsx'; 
+import GuestViewMeal from './Pages/GuestViewMeal.jsx'; 
+import GuestViewFood from './Pages/GuestViewFood.jsx'; 
+import GuestRecordMeal from './Pages/GuestRecordMeal.jsx'; 
 
 /* don't delete this import */
 import './App.css';
@@ -27,6 +30,9 @@ function App()
         <Route path="/SignIn" element={<HomeSignInPage />} />
         <Route path="/SignUp" element={<HomeSignUpPage />} />
         <Route path="/Guest" element={<Guest />} />
+        <Route path="/GuestRecordMeal" element={<GuestRecordMeal />} />
+        <Route path="/GuestViewMeal" element={<GuestViewMeal />} />
+        <Route path="/GuestViewFood" element={<GuestViewFood />} />
 
         {/* Add more routes as needed */}
       </Routes>
