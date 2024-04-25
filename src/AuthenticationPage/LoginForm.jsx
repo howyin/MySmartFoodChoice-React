@@ -3,38 +3,74 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginForm.css';
 import { auth } from '../Firebase/Firebase'; // Ensure this path is correct for your Firebase configuration
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../Firebase/Firebase'; // Ensure this path is correct for your Firestore configuration
 
+async function fetchUserType(uid) {
+  try {
+    const userDoc = doc(db, "users", uid); // Assuming 'users' is the collection where user data is stored
+    const docSnap = await getDoc(userDoc);
+
+    if (docSnap.exists()) {
+      return docSnap.data().userType; // Assuming 'userType' is the field where user type is stored
+    } else {
+      console.error("No such user found!");
+      return null; // Handle the case where user data does not exist
+    }
+  } catch (error) {
+    console.error("Error fetching user type:", error);
+    return null; // Handle errors in fetching user data
+  }
+}
 function LoginForm() {
   const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
-  const [userType, setUserType] = useState('user'); // Added back userType state
+  const [userType, setUserType] = useState('user'); // Ensure this is set to 'user' by default
   const navigate = useNavigate(); // Initialize navigate hook for programmatically navigating
-
   // Handle form submission for login
   const handleLogin = async (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
-    try {
-      await signInWithEmailAndPassword(auth, email, password); // Attempt to sign in with email and password
-      console.log("Login successful");
+    
+    // Fixed admin credentials for demonstration purposes
+    const adminEmail = "admin@example.com";
+    const adminPassword = "adminPass";
+    
+    if (email === adminEmail && password === adminPassword) {
+      window.alert("Admin login successful");
+      navigate('/adminDashboard'); // Navigate to admin dashboard
+      return; // Prevent further execution
+    }
 
-      // Navigate to different pages based on user type
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+      // Assuming you have a method to fetch user type from your backend or auth service
+      const fetchedUserType = await fetchUserType(user.uid); // This function needs to be implemented
+  
+      if (fetchedUserType !== userType) {
+        window.alert("Login failed: Incorrect user type selected.");
+        console.error("Login failed: User type does not match.");
+        return; // Stop execution if the user type does not match
+      }
+  
+      console.log("Login successful");
+      // Navigate based on user type
       switch(userType) {
         case 'user':
-          navigate('/'); // Adjust as necessary
+          window.alert("User Login succesful ");
+          navigate('/userDashboard');
           break;
         case 'vendorDietitian':
-          navigate('/dietitianDashboard'); // Adjust as necessary
-          break;
-        case 'vendorTrainer':
-          navigate('/trainerDashboard'); // Adjust as necessary
+          window.alert("Dietician Login succesful ");
+          navigate('/dietitianDashboard');
           break;
         default:
-          navigate('/'); // Default navigation
+          console.error("Access Denied: Unauthorized user type");
+          break;
       }
-
     } catch (error) {
-      console.error("Login failed:", error.message); // Log any error
-      // Consider setting an error state here to display the error message to the user
+      window.alert("Login failed: Incorrect credentials.");
+      console.error("Login failed:", error.message);
     }
   };
 
@@ -69,8 +105,7 @@ function LoginForm() {
             <label htmlFor="logInAs">Log In As:</label>
             <select id="logInAs" value={userType} onChange={(e) => setUserType(e.target.value)}>
               <option value="user">User</option>
-              <option value="vendorDietitian">Vendor (Dietitian)</option>
-              <option value="vendorTrainer">Vendor (Trainer)</option>
+              <option value="vendorDietitian">Dietitian</option>
             </select>
           </div>
 

@@ -100,15 +100,14 @@ function SignUpForm() {
           <label htmlFor="userType" className="user-type-container">User Type</label>
           <select id="userType" value={userType} onChange={(e) => setUserType(e.target.value)}>
             <option value="user">User</option>
-            <option value="vendorDietitian">Vendor (Dietitian)</option>
-            <option value="vendorTrainer">Vendor (Trainer)</option>
+            <option value="dietician">Dietician</option>
           </select>
         </div>
 
         <button className="button" type="submit">Sign Up</button>
       </form>
       <p className="signup-link">Already have an account? <a href="/signin">Sign in</a></p>
-      <p className="guest-link">Continue as Guest? <Link to="/guest">Click Here</Link></p>
+      <p className="guest-link"> <Link to="/guest">Continue as Guest?</Link></p>
     </div>
   );
 }
