@@ -1,4 +1,4 @@
-import Header from '../Components/Header.jsx';
+import Header from "../HeaderComponents/Header";
 import SignUpForm from './SignUpForm.jsx';
 
 function HomeSignUpPage() {
