@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { auth, db } from '../Firebase/Firebase'; // Assuming db is your Firestore instance
+import { auth, db } from '../Firebase/Firebase'; // Assuming db is Firestore instance
 import { useNavigate } from 'react-router-dom';
 
 function UserDashboard() {

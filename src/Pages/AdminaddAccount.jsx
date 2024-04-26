@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../Firebase/Firebase'; // Adjust this import path to where your Firebase config and instances are defined
+import { auth, db } from '../Firebase/Firebase'; // Adjust import path to where the Firebase config and instances are defined
 import '../AuthenticationPage/SignUpForm.css'; // Ensure the CSS file is correctly linked
 import { useNavigate, Link } from 'react-router-dom';
 
