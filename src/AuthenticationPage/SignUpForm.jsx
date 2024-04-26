@@ -1,79 +1,57 @@
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { doc, setDoc } from 'firebase/firestore';
-import { auth, db } from '../Firebase/Firebase'; // Adjust this import path to where your Firebase config and instances are defined
-import './SignUpForm.css'; // Ensure the CSS file is correctly linked
-import { useNavigate } from 'react-router-dom';
+import { getDatabase, ref, set } from 'firebase/database';
+import { auth } from '../Firebase/Firebase'; // Adjust this import path to your Firebase config and instances
+import './SignUpForm.css';
+import { useNavigate, Link } from 'react-router-dom';
 
 function SignUpForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [contactNumber, setContactNumber] = useState('');
-  const [userType, setUserType] = useState('user');
+  const [accountType, setAccountType] = useState('User'); // Added accountType state with default value
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => 
-  {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
 
-    try 
-    {
-      // Create user with email and password using Firebase Authentication
+    if (password !== confirmPassword) {
+      setError('Passwords do not match.');
+      return;
+    }
+
+    try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      // we need to record the userID to record.
-      // to use realtime database, use this var below.
-      // const databaseRefUserAccount = DatabaseReference.ref('/User Accounts/{userId}');
       const user = userCredential.user;
 
-      /*
-      // Check how to test databaseRefUserAccount
-      databaseRefUserAccount.once('value', (snapshot) => {
-        if (snapshot.exists()) {
-          console.log(snapshot.val());
-        } else {
-          console.log("No data available");
-        }
-      });
+      const db = getDatabase();
+      const userRef = ref(db, 'Registered Accounts/' + user.uid);
 
-      // Test for inputing a data inside of databaseRefUserAccount
-      databaseRefUserAccount.set
-      ({
+      await set(userRef, {
         firstName,
         lastName,
+        accountType, // This will save the selected account type
         email,
-        contactNumber,
-        userType
+        password  // Caution: Storing passwords in plaintext is not secure. Consider security best practices.
       });
 
-      */
-
-      // the below is firestore not the realtime database
-      // Store additional user details in Firestore under the 'users' collection
-      await setDoc(doc(db, "users", user.uid), 
-      {
-        firstName,
-        lastName,
-        email, // Optional: Firebase Authentication already stores the email, but you might store it for easier querying
-        contactNumber,
-        userType
-      });
       console.log("Account created and additional information stored successfully");
-      navigate('/'); // Redirect to the homepage or dashboard after successful signup
+      navigate('/'); // Navigate to the desired route after sign up
     } catch (error) {
-      setError(error.message); // Set the error state to display error message
+      setError(error.message);
       console.error("Error creating user account:", error);
     }
   };
 
   return (
-    <div className="signup-form">
-      <h2 className="signup-title">Sign Up</h2>
-      {error && <p className="error-message">{error}</p>} {/* Display error message if any */}
-      <form onSubmit={handleSubmit}>
+    <div className="signup-container">
+      <h1 className="header-title">Sign Up</h1>
+      {error && <p className="error-message">{error}</p>}
+      <form onSubmit={handleSubmit} className="signup-form">
         <div className="form-group">
           <label className="username-container">First Name</label>
           <input
@@ -81,6 +59,7 @@ function SignUpForm() {
             placeholder="Please enter first name"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
+            required
           />
         </div>
 
@@ -91,6 +70,7 @@ function SignUpForm() {
             placeholder="Please enter last name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
+            required
           />
         </div>
 
@@ -101,41 +81,43 @@ function SignUpForm() {
             placeholder="Please enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="password" className="password-container">Password</label>
+          <label className="password-container">Password</label>
           <input
             type="password"
             placeholder="Please enter password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            required
           />
         </div>
 
-        {/* <div className="form-group">
-          <label htmlFor="contactNumber" className="contact-container">Contact Number</label>
+        <div className="form-group">
+          <label className="password-container">Confirm Password</label>
           <input
-            type="text"
-            placeholder="Please enter contact number"
-            value={contactNumber}
-            onChange={(e) => setContactNumber(e.target.value)}
+            type="password"
+            placeholder="Confirm your password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
           />
-        </div> */}
+        </div>
 
         <div className="form-group">
-          <label htmlFor="userType" className="user-type-container">User Type</label>
-          <select id="userType" value={userType} onChange={(e) => setUserType(e.target.value)}>
-            <option value="user">User</option>
-            <option value="vendorDietitian">Vendor (Dietitian)</option>
-            <option value="vendorTrainer">Vendor (Trainer)</option>
+          <label className="user-type-container">Account Type</label>
+          <select value={accountType} onChange={(e) => setAccountType(e.target.value)} required>
+            <option value="User">User</option>
+            <option value="Admin">Admin</option>  // Example, add more account types as needed
           </select>
         </div>
 
         <button className="button" type="submit">Sign Up</button>
       </form>
-      <p className="signup-link">Already have an account? <a href="/signin">Sign in</a></p>
+      <p className="signup-link">Already have an account? <Link to="/signin">Sign in</Link></p>
     </div>
   );
 }

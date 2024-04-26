@@ -6,6 +6,11 @@ import AboutUs from './Pages/AboutUs.jsx';
 import ContactUs from './Pages/ContactUs.jsx';
 import LoginForm from './AuthenticationPage/LoginForm.jsx';
 /* should not delete this import */
+import HomeSignInPage from './AuthenticationPage/HomeSignInPage.jsx';
+import HomeSignUpPage from './AuthenticationPage/HomeSignUpPage.jsx';
+import Guest from './Pages/Guest.jsx'; 
+
+/* don't delete this import */
 import './App.css';
 import SignUpForm from './AuthenticationPage/SignUpForm.jsx';
 
@@ -24,6 +29,10 @@ function App()
         <Route path = "/ReviewForm" element={<ReviewForm />} /> 
         <Route path = "/AboutUs" element={<AboutUs />} /> 
         <Route path = "/ContactUs" element={<ContactUs />} /> 
+        <Route path="/SignIn" element={<HomeSignInPage />} />
+        <Route path="/SignUp" element={<HomeSignUpPage />} />
+        <Route path="/Guest" element={<Guest />} />
+
         {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
