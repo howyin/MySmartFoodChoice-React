@@ -33,7 +33,7 @@ function LoginForm() {
     
     // Fixed admin credentials for demonstration purposes
     const adminEmail = "admin@example.com";
-    const adminPassword = "adminPass";
+    const adminPassword = "Password";
     
     if (email === adminEmail && password === adminPassword) {
       window.alert("Admin login successful");
@@ -58,7 +58,7 @@ function LoginForm() {
       switch(userType) {
         case 'user':
           window.alert("User Login succesful ");
-          navigate('/');
+          navigate('/UserProfile');
           break;
         case 'vendorDietitian':
           window.alert("Dietician Login succesful ");
