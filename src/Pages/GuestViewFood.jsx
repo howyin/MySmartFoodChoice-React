@@ -4,7 +4,7 @@ import React from 'react';
 function GuestViewMeal() {
   return (
     <div>
-      <h2>Guest View Meal History Page</h2>
+      <h2>Guest View Food Recipes Page</h2>
       {}
     </div>
   );
