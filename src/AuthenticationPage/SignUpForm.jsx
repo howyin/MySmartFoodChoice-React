@@ -118,6 +118,7 @@ function SignUpForm() {
         <button className="button" type="submit">Sign Up</button>
       </form>
       <p className="signup-link">Already have an account? <Link to="/signin">Sign in</Link></p>
+      <p className="guest-link">Continue as Guest? <Link to="/guest">Click Here</Link></p>
     </div>
   );
 }
