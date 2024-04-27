@@ -35,7 +35,9 @@ function App()
         <Route path="/SignIn" element={<HomeSignInPage />} />
         <Route path="/SignUp" element={<HomeSignUpPage />} />
         <Route path="/Guest" element={<Guest />} />
-
+        <Route path="/GuestRecordMeal" element={<GuestRecordMeal />} />
+        <Route path="/GuestViewMeal" element={<GuestViewMeal />} />
+        <Route path="/GuestViewFood" element={<GuestViewFood />} />
         {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
