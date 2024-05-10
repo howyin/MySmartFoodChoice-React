@@ -56,6 +56,3 @@ const ReviewSummary = () => {
 };
 
 export default ReviewSummary;
-
-
-

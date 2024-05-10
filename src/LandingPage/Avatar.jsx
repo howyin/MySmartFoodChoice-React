@@ -1,16 +1,12 @@
-import './All.css'
-import avatar from '../assets/avatar.svg'
+import React from 'react';
+import avatar from '../assets/avatar.svg'; // Assuming the avatar SVG file is in the assets directory
 
 const Avatar = () => {
-
-    return(
+    return (
         <div>
-            {[...Array(6)].map((_, index) => (
-                <img key={index} src={avatar} className='avatar-image'/>
-            ))}
+            <img src={avatar} className='avatar-image' alt="Avatar" />
         </div>
     );
-}
-
+};
 
 export default Avatar;

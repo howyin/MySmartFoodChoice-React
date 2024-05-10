@@ -1,21 +1,22 @@
 .nav {
     background-color: dodgerblue;
-    position: sticky;
+    align-items: center;
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 10;
+    padding: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 0;
 }
 
 .header-content {
     align-items: center;
-
-    padding: 10px 20px; /* Adjust padding here */
+    padding: 10px; /* Adjust padding here */
 }
 
 .title {
     font-size: 20px; /* Adjust font size as needed */
-    color: black;
 }
 
 .nav-links {
@@ -39,7 +40,6 @@
     color: #ffcc00;
 }
 
-
 @media (max-width: 768px) {
     .nav-user-operations,
     .nav-links {
@@ -55,12 +55,4 @@
     .nav-links li {
         margin-right: 0;
     }
-}
-.header-content {
-    display: flex;
-    margin: 10px;
-    margin-left: 50px;
-    color:black;
-    justify-content: space-between;
-    align-items: center;
 }

@@ -39,11 +39,9 @@ export const HomePage = () =>
                 <Title/>
                 
                 <div style={{ display: 'flex'}}>
-                    <div style={{ marginLeft: '20px' }}  >
-                        <Avatar />
-                    </div>
+
                     
-                    <div style={{ marginRight: '20px' }} >
+                    <div style={{ marginLeft: '560px' }} >
                         <Review />
                     </div>
                 </div>

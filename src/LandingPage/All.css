@@ -9,6 +9,7 @@
     --font-size-small: 14px; /* Smaller text size for less prominent text */
 }
 .img-fluid {
+    left: 0;
     max-width: 100%;
     height: auto;
 }
@@ -26,7 +27,7 @@ body {
     background-color: var(--background-dark);
     line-height: 1.6;
     /*padding: 20px;*/
-    margin: 0 auto;
+    margin: 0;
     width:100%;
 }
 
@@ -54,18 +55,22 @@ body {
 }
 
 
-.title {
+.title h1 {
     font-size: small;
     margin-bottom: 40px;
     padding-top: 20px;
+    color:rgb(249, 249, 249);
+}
+
+.pie-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1px;
 }
 
 .pie {
     width: 40%;
     height: 30%;
-    display: flex;
-    justify-content: space-around;
-
 }
 
 .piecontainer {
@@ -78,28 +83,28 @@ body {
     background-color: var(--background-light);
     border-radius: var(--border-radius);
     color: var(--text-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Enhanced shadow for depth */
-    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+    margin: 20px auto; 
     padding: var(--primary-padding);
-}
-
-.userReview {
-    width: 500px; /* Specific width */
-    height: max-content; /* Auto-adjust height */
-    text-align: center;
-    margin-left:90%;
+    width: 500px; 
+    height: max-content;
+    text-align: center; 
 }
 
 .avatar-image {
-    margin-top: 10px;
-    width: 80px; /* Fixed size for avatars */
-    height: 80px; /* Ensures square aspect ratio for consistency */
-    display: block;
-    margin: auto; /* Centers the avatar images */
-    border-radius: 50%; /* Circular avatars */
-    object-fit: cover; /* Ensures proper fit without stretching */
-    display: auto;
-    margin-left:150%;
-    align-items: center;
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    margin-right: 10px; 
+}
 
+
+.view-all-reviews, .collapse-reviews {
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    color: white; /* Change the color to white */
+    cursor: pointer; /* Show pointer cursor on hover */
+    margin-top: 20px; /* Add some top margin for spacing */
+    margin-bottom: 20px; /* Add some bottom margin */
 }

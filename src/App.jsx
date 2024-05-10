@@ -5,9 +5,6 @@ import ReviewForm from './ReviewPage/ReviewForm.jsx';
 import AboutUs from './Pages/AboutUs.jsx';
 import ContactUs from './Pages/ContactUs.jsx';
 import LoginForm from './AuthenticationPage/LoginForm.jsx';
-/* should not delete this import */
-import HomeSignInPage from './AuthenticationPage/HomeSignInPage.jsx';
-import HomeSignUpPage from './AuthenticationPage/HomeSignUpPage.jsx';
 import Guest from './Pages/Guest.jsx'; 
 import GuestRecordMeal from './Pages/GuestRecordMeal.jsx';
 import GuestViewMeal from './Pages/GuestViewMeal.jsx';
@@ -16,10 +13,11 @@ import CheckIn from './Pages/CheckIn.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import CreateBusinessProfile from './Dashboard/CreateBusinessProfile.jsx';
 import DietitianDashBoard from './Dashboard/DietitianDashBoard.jsx';
-/* don't delete this import */
-import './App.css';
 import SignUpForm from './AuthenticationPage/SignUpForm.jsx';
 import CreateRecipe from './Dashboard/CreateRecipes.jsx';
+
+import './App.css';
+
 function App() 
 {
   // remove login and logout
@@ -36,8 +34,6 @@ function App()
         <Route path = "/ReviewForm" element={<ReviewForm />} /> 
         <Route path = "/AboutUs" element={<AboutUs />} /> 
         <Route path = "/ContactUs" element={<ContactUs />} /> 
-        <Route path="/SignIn" element={<HomeSignInPage />} />
-        <Route path="/SignUp" element={<HomeSignUpPage />} />
         <Route path="/Guest" element={<Guest />} />
         <Route path="/GuestRecordMeal" element={<GuestRecordMeal />} />
         <Route path="/GuestViewMeal" element={<GuestViewMeal />} />

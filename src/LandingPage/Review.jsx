@@ -1,94 +1,84 @@
-// import React, { useEffect, useState } from 'react';
-// import db from './firebaseConfig'; // Adjust the path as necessary
-// import { collection, getDocs } from 'firebase/firestore';
-// import './All.css';
-
-// const Review = () => {
-//     const generateRandomReview = () => {
-//         const reviews = [
-//             "Great product, highly recommended!",
-//             "Excellent service, will definitely come back!",
-//             "Amazing experience, exceeded my expectations!",
-//             "Top-notch quality, worth every penny!",
-//             "Outstanding customer support, very satisfied!",
-//             "Impressive delivery time, very happy with my purchase!",
-//             "Fantastic product, couldn't be happier!"
-//         ];
-//         return reviews[Math.floor(Math.random() * reviews.length)];
-//     };
-
-//     return (
-//         <div>
-//             <div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐⭐⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐⭐⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-//                 <div className='userReview'>
-//                     <div className="rating-bar">⭐⭐⭐⭐⭐</div>
-//                     <p className="text-with-padding">{generateRandomReview()}</p>
-//                 </div>
-
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default Review;
 import React, { useEffect, useState } from 'react';
 import { db, auth } from '../Firebase/Firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import './All.css';
+import Avatar from './Avatar'; // Assuming Avatar component is in the same directory as Review
 
 const Review = () => {
   const [reviews, setReviews] = useState([]);
+  const [visibleReviews, setVisibleReviews] = useState(4); // Number of reviews initially visible
+  const [sortOrder, setSortOrder] = useState(null);
+  const [expanded, setExpanded] = useState(false); // State to track whether reviews are expanded or collapsed
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, 'Reviews'));
-        console.log("Fetched reviews:", querySnapshot.docs.map(doc => doc.data())); // Log fetched data
         const reviewsArray = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
         }));
         setReviews(reviewsArray);
       } catch (error) {
-        console.error("Error fetching reviews:", error); // Log any errors
+        console.error("Error fetching reviews:", error);
       }
     };
 
     fetchReviews();
   }, []);
 
+  const sortReviews = (order) => {
+    if (order === 'asc') {
+      return [...reviews].sort((a, b) => a.rating - b.rating);
+    } else if (order === 'desc') {
+      return [...reviews].sort((a, b) => b.rating - a.rating);
+    }
+    // If sortOrder is null or invalid, return original order
+    return reviews;
+  };
+
+  const handleSort = (order) => {
+    const sortedReviews = sortReviews(order);
+    setReviews(sortedReviews);
+    setSortOrder(order);
+  };
+
+  const handleViewAll = () => {
+    if (expanded) {
+      setVisibleReviews(4); // Show only 5 reviews when collapsing
+    } else {
+      setVisibleReviews(10); // Show all reviews when expanding
+    }
+    // Toggle the expanded state
+    setExpanded(!expanded);
+  };
+
   return (
     <div>
-      {reviews.map((review) => (
+      <div>
+        <button onClick={() => handleSort('asc')}>Sort by Lowest Rating</button>
+        <button onClick={() => handleSort('desc')}>Sort by Highest Rating</button>
+      </div>
+      {reviews.slice(0, visibleReviews).map((review) => (
         <div key={review.id} className='userReview'>
-          <div className="rating-bar">{ "⭐".repeat(review.rating) }</div>
-          <p className="text-with-padding">{review.comment}</p>
+          <Avatar />
+          <div className="review-content">
+            <div className="rating-bar">{ "⭐".repeat(review.rating) }</div>
+            <p className="text-with-padding">{review.comment}</p>
+
+          </div>
         </div>
       ))}
+      {visibleReviews < reviews.length && (
+        <div className="view-all-reviews" onClick={handleViewAll}>
+          {expanded ? "Collapse Reviews" : "Show More Reviews"}
+        </div>
+      )}
+      {expanded && (
+        <div className="collapse-reviews" onClick={handleViewAll}>
+          Collapse
+        </div>
+      )}
     </div>
   );
 };

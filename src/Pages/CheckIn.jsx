@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './CheckIn.css';
-import Header from '../Components/Header';
+import Header from '../HeaderComponents/Header';
 
 function CheckIn() {
     const [checkedDays, setCheckedDays] = useState(new Array(7).fill(false));
