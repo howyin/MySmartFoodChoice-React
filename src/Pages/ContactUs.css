@@ -6,7 +6,6 @@
     justify-content: center;
     min-height: 100vh; /* Ensure the page content takes at least the full height of the viewport */
     margin: 0;
-    padding: 20px;
     background-color: #282c34; /* Assuming a dark background, change as necessary */
     color: #ffffff; /* Light text color for contrast */
 }

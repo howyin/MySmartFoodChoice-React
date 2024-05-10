@@ -2,49 +2,33 @@ import React, { useState } from 'react';
 import './CheckIn.css';
 import Header from '../Components/Header';
 
+function CheckIn() {
+    const [checkedDays, setCheckedDays] = useState(new Array(7).fill(false));
 
-
-function DailyCheckIn() {
-    // State to keep track of selected day
-    const [selectedDay, setSelectedDay] = useState(null);
-
-    // Function to handle radio button change
-    const handleRadioChange = (day) => {
-        // Check if the selected day is already the current selected day
-        if (selectedDay === day) {
-            // If it is, deselect it
-            setSelectedDay(null);
-        } else {
-            // If it's not, select it
-            setSelectedDay(day);
-        }
+    const handleCheckIn = (index) => {
+        const updatedCheckedDays = [...checkedDays];
+        updatedCheckedDays[index] = true;
+        setCheckedDays(updatedCheckedDays);
     };
 
-    // Array of days of the week
-    const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const checkedCount = checkedDays.filter(Boolean).length;
 
     return (
-        
-        <div className="daily-check-in-container">
-        <Header />
-        <h2>Daily Check-in</h2>
-            <div className="check-in-days">
-                {daysOfWeek.map(day => (
-                    <div className="check-in-day" key={day}>
-                        <input
-                            type="radio"
-                            id={day.toLowerCase()}
-                            value={day}
-                            checked={selectedDay === day}
-                            onChange={() => handleRadioChange(day)}
-                        />
-                        <label htmlFor={day.toLowerCase()}>{day}</label>
-                    </div>
-                ))}
+        <div className="check-in-page">
+            <Header />
+            <div className="check-in-container">
+                <h2>Checked in for {checkedCount} day{checkedCount !== 1 ? 's' : ''} this Week</h2>
+                <div className="week-grid">
+                    {checkedDays.map((checked, index) => (
+                        <div key={index} className={`day ${checked ? 'checked' : ''}`} onClick={() => handleCheckIn(index)}>
+                            Day {index + 1}
+                            {checked && <span className="checkmark">✔</span>}
+                        </div>
+                    ))}
+                </div>
             </div>
-            <button onClick={() => console.log('Selected day:', selectedDay)}>Submit Check-in</button>
         </div>
     );
 }
 
-export default DailyCheckIn;
+export default CheckIn;

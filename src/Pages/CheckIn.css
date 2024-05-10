@@ -1,45 +1,47 @@
-.daily-check-in-container {
-    font-family: 'Arial', sans-serif;
+.check-in-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh; /* Ensure the page content takes at least the full height of the viewport */
+    align-items: center;
     margin: 0;
     background-color: #282c34; /* Assuming a dark background, change as necessary */
-    color: #ffffff; /* Light text color for contrast */
     text-align: center;
 }
 
-.check-in-days {
+.check-in-container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    background-color: #282c34;
+}
+
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.day {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Center the radio buttons horizontally */
-}
-
-.check-in-day {
-    margin-right: 20px;
-    margin-bottom: 10px;
-}
-
-input[type="radio"] {
-    display: none;
-}
-
-input[type="radio"] + label {
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
     cursor: pointer;
+    position: relative;
 }
 
-input[type="radio"] + label:before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #000;
-    border-radius: 50%; /* Makes the border round to resemble a radio button */
-    margin-right: 5px;
-    vertical-align: middle;
-    background-color: #fff;
+.day.checked {
+    background-color: #28a745;
 }
 
-input[type="radio"]:checked + label:before {
-    background-color: #000;
+.checkmark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 24px;
 }
