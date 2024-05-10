@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-import Header from '../Components/Header';
+import Header from '../HeaderComponents/Header';
 import image from '../assets/AboutUs.jpg';
 import '../Components/Header.css';
 
@@ -35,6 +35,7 @@ function AboutUs() {
                             <p>Short description about the team member.</p>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>

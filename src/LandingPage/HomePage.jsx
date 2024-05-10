@@ -1,4 +1,4 @@
-import Header from "../Components/Header";
+import Header from "../HeaderComponents/Header";
 import ProjectInfo from "../Advertisement/ProjectInfo";
 import Graph from "./Graph";
 import Image from "./Image";
@@ -27,7 +27,6 @@ export const HomePage = () =>
                 </div>
             </div>
     */
-
                 /* add more here in this home page, you can see each components */
     return (
         <div>

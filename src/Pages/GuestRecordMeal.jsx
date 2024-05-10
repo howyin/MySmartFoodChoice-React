@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './GuestRecordMeal.css'; // Import the CSS file for styling
-import photoIcon from '../assets/PhotoIcon.jpg'; // Import the photo icon
+import './GuestRecordMeal.css'; 
+import photoIcon from '../assets/PhotoIcon.jpg'; 
 
 function GuestRecordMeal() {
   return (
