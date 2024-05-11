@@ -56,7 +56,7 @@ body {
 
 
 .title h1 {
-    font-size: small;
+    font-size: 30px;
     margin-bottom: 40px;
     padding-top: 20px;
     color:rgb(249, 249, 249);
@@ -65,7 +65,7 @@ body {
 .pie-wrapper {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1px;
+    margin-bottom: 60px;
 }
 
 .pie {
@@ -78,33 +78,38 @@ body {
     margin: 30px;
     padding-bottom: 30px;
 }
-
 .userReview {
-    background-color: var(--background-light);
-    border-radius: var(--border-radius);
-    color: var(--text-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
-    margin: 20px auto; 
-    padding: var(--primary-padding);
-    width: 500px; 
-    height: max-content;
-    text-align: center; 
+  background-color: var(--background-light);
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px rgba(148, 146, 146, 0.3); 
+  margin: 20px auto; 
+  padding: var(--primary-padding);
+  width: 550px; 
+  height: max-content;
+  text-align: center; 
+  padding-top: 10px;
+  padding-bottom: 1px;
+}
+
+.avatar-container {
+  display: flex;
+  align-items: center;
 }
 
 .avatar-image {
-    width: 50px; 
-    height: 50px; 
-    border-radius: 50%; 
-    margin-right: 10px; 
+  width: 50px; 
+  height: 50px; 
+  border-radius: 50%; 
+  margin-right: 10px; 
 }
 
-
 .view-all-reviews, .collapse-reviews {
-    text-decoration: underline;
-    cursor: pointer;
-    text-align: center;
-    color: white; /* Change the color to white */
-    cursor: pointer; /* Show pointer cursor on hover */
-    margin-top: 20px; /* Add some top margin for spacing */
-    margin-bottom: 20px; /* Add some bottom margin */
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+  color: white; /* Change the color to white */
+  cursor: pointer; /* Show pointer cursor on hover */
+  margin-top: 20px; /* Add some top margin for spacing */
+  margin-bottom: 20px; /* Add some bottom margin */
 }

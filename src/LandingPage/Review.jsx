@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { db, auth } from '../Firebase/Firebase';
+import { db } from '../Firebase/Firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import './All.css';
 import Avatar from './Avatar'; // Assuming Avatar component is in the same directory as Review
@@ -65,7 +65,6 @@ const Review = () => {
           <div className="review-content">
             <div className="rating-bar">{ "⭐".repeat(review.rating) }</div>
             <p className="text-with-padding">{review.comment}</p>
-
           </div>
         </div>
       ))}
@@ -74,9 +73,9 @@ const Review = () => {
           {expanded ? "Collapse Reviews" : "Show More Reviews"}
         </div>
       )}
-      {expanded && (
+      {expanded && visibleReviews === reviews.length && (
         <div className="collapse-reviews" onClick={handleViewAll}>
-          Collapse
+          Collapse Reviews
         </div>
       )}
     </div>

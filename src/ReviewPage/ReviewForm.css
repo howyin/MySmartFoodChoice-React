@@ -1,21 +1,16 @@
-.full-width-container
-{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+
 
 .form-container 
 {
-
-    padding: 2rem;
-    margin-top: 60px; /* Adjust this based on your Header's actual height */
-    width: 100%; /* Ensures the container takes up the available width */
-    max-width: 500px; /* Or whatever maximum width you prefer */
-    margin: 60px auto; /* Vertical spacing from the header, and centered horizontally */
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensure the page content takes at least the full height of the viewport */
+    padding-left: 900px;
+    padding-right: 900px;
+    background-color: #282c34; /* Assuming a dark background, change as necessary */
+    color: #ffffff; /* Light text color for contrast */
 }
 
 .review-form {
@@ -30,9 +25,11 @@
 }
 
 .review-form textarea, .review-form select, .review-form button {
+
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+
 }
 
 .review-form button {
@@ -43,7 +40,8 @@
 }
 
 .review-form textarea {
-    height: 120px; /* Fixed height for the textarea */
+    height: 300px; /* Fixed height for the textarea */
+    width: 550px;
 }
 
 /* Enhancing the focus states for accessibility */

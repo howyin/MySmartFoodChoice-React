@@ -1,42 +1,33 @@
 /* src/Authentication/SignUpForm.css */
 
-.signup-form {
-  display: auto;
-  
-  margin-left: 25%;
-  margin-top: 40px;
-  bottom: 10%;
-  left: 75%;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-  padding: 20px;
-}
 
 .header-title {
-  color: black;
+  color: rgb(0, 0, 0);
   font-size: 24px; /* Adjust the size as needed */
-  margin-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 120px;
+  margin-left: 190px;
 }
 
 .signup-form {
   background-color: rgba(115, 201, 255, 0.985);
   border-radius: 20px; /* Make the layout rounded */
   padding-right: 40px; /* Add some padding on the right for aesthetics */
-  padding-left: 10px;
+  padding-left: 40px;
   border-radius: 10px; /* Keep the form itself rounded */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 400px;
+  box-shadow: 0 4px 8px rgba(240, 240, 240, 0.1);
+  width: 550px;
+  margin-top: 0px;
 }
 
 .signup-title {
-  color: black;
+  color: rgb(0, 0, 0);
   margin-left: 40%;
   align-items: center;
 }
 
 .signup-form h2 {
-  color: black;
+  color: rgb(0, 0, 0);
   margin-bottom: 40px;
 }
 
@@ -65,15 +56,26 @@
   margin-left: 25px;
 }
 
+.signup-form select {
+  width: 45%; /* Set the width to 100% or adjust to your preference */
+  padding: 10px; /* Optional: Add padding for better appearance */
+}
+
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .form-group label {
   display: block;
-  color: black;
+  color: black !important;
   margin-bottom: 5px;
+  padding-right: 20px;
 }
+
+.form-group input::placeholder {
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
 
 .form-group input {
   width: 100%;
@@ -87,7 +89,7 @@
 .button {
   display: auto;
   
-  margin-left: 25%;
+  margin-left: 130px;
   margin-top: 20px;
   bottom: 10%;
   left: 75%;
@@ -121,3 +123,4 @@
 .guest-link {
   text-align: center;
 }
+

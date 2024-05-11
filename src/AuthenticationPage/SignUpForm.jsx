@@ -51,9 +51,9 @@ function SignUpForm() {
   return (
     <div className="signup-container">
       <Header/>
-      <h1 className="header-title">Sign Up</h1>
-      {error && <p className="error-message">{error}</p>}
       <form onSubmit={handleSubmit} className="signup-form">
+        <h1 className="header-title">Sign Up</h1>
+        {error && <p className="error-message">{error}</p>}
         <div className="form-group">
           <label className="username-container">First Name</label>
           <input
@@ -113,7 +113,7 @@ function SignUpForm() {
           <label className="user-type-container">Account Type</label>
           <select value={accountType} onChange={(e) => setAccountType(e.target.value)} required>
             <option value="User">User</option>
-            <option value="Dietitian">Dietitian</option>  // Example, add more account types as needed
+            <option value="Dietitian">Dietitian</option>  {/* Example, add more account types as needed */}
           </select>
         </div>
 

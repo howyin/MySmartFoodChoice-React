@@ -1,89 +1,86 @@
-/* src/Authentication/LoginForm.css */
-
 .login-form {
   display: flex;
   flex-direction: column;
-  margin-left: 25%;
-  margin-bottom: 25 px;
-  bottom: 10%;
-  left: 75%;
   align-items: center;
+  justify-content: center;
   background-color: rgba(115, 201, 255, 0.985);
   border-radius: 20px; /* Make the layout rounded */
-  padding-right: 20px; /* Add some padding on the right for aesthetics */
-  padding-left: 10px;
-  border-radius: 10px; /* Keep the form itself rounded */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  width: 300px; /*the form above any non-positioned content */
-}
-  
-
-.dropdown 
-{
-  color: black;
-  width: 90%; /* Ensures dropdown fits well within the form */
-  margin-bottom: 15px; /* Spacing after dropdown */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 550px; /* Match the width of the signup form */
+  margin-left: 50px; /* Adjust margin as needed */
+  margin-bottom: 140px; /* Adjust margin as needed */
+  left: 75%;
 }
 
 .login-title, .login-form h2 {
   color: black;
-  text-align: center; /* Centers the title text */
-  margin: 10px 0; /* Top and bottom margin for the title */
+  text-align: center;
+  margin: 10px 0;
 }
 
 .input-group {
-  margin-bottom: 15px; /* Spacing after each input group */
+  margin-bottom: 15px;
 }
 
 .input-group label {
-  display: block; /* Makes label take the full width, easier to manage */
-  margin-bottom: 5px; /* Small space between label and input field */
+  display: block;
+  margin-bottom: 5px;
 }
 
 .input-group input {
-  width: 90%; /* Width of inputs */
-  padding: 10px; /* Padding inside input for text spacing */
-  background-color: white; /* White background for clarity */
-  border: 1px solid #ccc; /* Subtle border */
-  border-radius: 10px; /* Rounded borders for inputs */
+  width: 100%; /* Adjust input width to fill the container */
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 100px;
+}
+
+.input-group select {
+  width: 100%; /* Adjust the width to fill the container */
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-right: 100px; /* Adjust margin as needed */
 }
 
 .remember-me {
-  display: flex; /* Uses flexbox to align checkbox and label */
-  align-items: center; /* Aligns the checkbox and label vertically */
-  margin-bottom: 20px; /* Spacing after the checkbox */
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .remember-me input[type="checkbox"] {
-  margin-right: 5px; /* Space between checkbox and label */
+  margin-right: 5px;
 }
 
 button.login-button {
-  width: 90%; /* Button width consistent with input fields */
-  padding: 10px; /* Padding for comfort */
-  border: none; /* No border for a clean look */
-  border-radius: 10px; /* Rounded edges on buttons */
-  background-color: rgb(7, 175, 226); /* Bright, appealing button color */
-  color: white; /* White text for contrast */
-  cursor: pointer; /* Cursor effect to indicate button */
+  width: 100%; /* Adjust button width to fill the container */
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(7, 175, 226);
+  color: white;
+  cursor: pointer;
 }
 
 button.login-button:hover {
-  background-color: #0056b3; /* Darker blue on hover for interaction feedback */
+  background-color: #0056b3;
 }
 
 .forgot-password, .divider, .signup-link {
-  text-align: center; /* Center alignment for text elements */
-  color: black; /* Black text for readability */
-  margin: 10px 0; /* Vertical spacing */
+  text-align: center;
+  color: black;
+  margin: 10px 0;
 }
 
 .forgot-password a, .signup-link a {
-  color: black; /* Link color */
-  text-decoration: none; /* No underline */
-  text-align: center;
+  color: black;
+  text-decoration: none;
 }
 
 .signup-link a {
-  font-weight: bold; /* Bold for emphasis */
+  font-weight: bold;
 }

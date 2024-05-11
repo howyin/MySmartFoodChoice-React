@@ -54,15 +54,15 @@ function ContactUs() {
                 <p>If you have any questions or inquiries, feel free to reach out to us.</p>
                 
                 <form className="contact-form" onSubmit={handleSubmit}>
-                    <div className="form-group">
+                    <div className="form-group1">
                         <label htmlFor="name">Name:</label>
                         <input type="text" id="name" name="name" value={form.name} onChange={handleChange} required />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group1">
                         <label htmlFor="email">Email:</label>
                         <input type="email" id="email" name="email" value={form.email} onChange={handleChange} required />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group1">
                         <label htmlFor="message">Message:</label>
                         <textarea id="message" name="message" rows="4" value={form.message} onChange={handleChange} required></textarea>
                     </div>
