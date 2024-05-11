@@ -12,7 +12,7 @@ import GuestViewFood from './Pages/GuestViewFood.jsx';
 import CheckIn from './Pages/CheckIn.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import CreateBusinessProfile from './Dashboard/CreateBusinessProfile.jsx';
-import DietitianDashBoard from './Dashboard/DietitianDashBoard.jsx';
+import DietitianDashBoard from './Dashboard/DietitianDashboard.jsx';
 import SignUpForm from './AuthenticationPage/SignUpForm.jsx';
 import CreateRecipe from './Dashboard/CreateRecipes.jsx';
 
