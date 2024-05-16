@@ -50,7 +50,7 @@ const ReviewSummary = () => {
 
   return (
     <div>
-      <h3>{averageRating}/5 {renderStars(averageRating)} based on {totalReviews} Reviews</h3>
+      <h3 className="review-heading">{averageRating}/5 {renderStars(averageRating)} based on {totalReviews} Reviews</h3>
     </div>
   );
 };

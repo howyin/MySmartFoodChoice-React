@@ -1,12 +1,12 @@
 :root {
-    --primary-color: #333; /* Dark grey, gives a subtle and elegant look */
-    --text-color: #fff; /* White text for high contrast on dark backgrounds */
-    --background-light: #424242; /* Soft grey for secondary elements */
-    --background-dark: #212121; /* Very dark grey for primary background areas */
-    --accent-color: #007aff; /* Blue color that mimics Apple's accent color */
-    --border-radius: 10px; /* Smooth, rounded corners for all interactive elements */
-    --font-size-regular: 16px; /* Regular text size for clear readability */
-    --font-size-small: 14px; /* Smaller text size for auxiliary information */
+    --primary-color: #333;
+    --text-color: #fff;
+    --background-light: #424242;
+    --background-dark: #212121;
+    --accent-color: #007aff;
+    --border-radius: 10px;
+    --font-size-regular: 16px;
+    --font-size-small: 14px;
 }
 
 .nav {
@@ -19,23 +19,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 50px;
+    padding: 10px 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .title {
     color: var(--text-color);
-    font-size: 1.5em;
+    font-size: 25px;
+    padding-left: 10px;
 }
 
 .nav-links {
     list-style-type: none;
     display: flex;
-    margin-top: 20px;
+    margin: 0;
+    align-items: center;
 }
 
 .nav-links li {
-    margin-right: 20px;
+    padding: 20px;
 }
 
 .nav-links li a {
@@ -43,7 +45,6 @@
     text-decoration: none;
     font-size: var(--font-size-regular);
     transition: color 0.3s ease;
-    margin-top: 20px;
 }
 
 .nav-links li a:hover {
@@ -52,26 +53,43 @@
 
 .header-content {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .login-section {
     display: flex;
     align-items: center;
-    
+    position: relative;
 }
 
-.login-section a {
-    color: var(--text-color);
-    text-decoration: none;
-    background-color: var(--accent-color);
-    padding: 5px 10px;
+.avatar-dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--background-light);
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
     border-radius: var(--border-radius);
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
     transition: background-color 0.3s ease;
 }
 
-.login-section a:hover {
-    background-color: var(--text-color);
-    color: var(--primary-color);
+.dropdown-content a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.avatar-dropdown:hover .dropdown-content {
+    display: block;
 }

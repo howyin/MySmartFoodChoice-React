@@ -1,83 +1,27 @@
-/* Global Styles */
-.about-us-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Ensure the page content takes at least the full height of the viewport */
-    padding-left: 700px;
-    padding-right: 700px;
+
+.img-fluid1{
+    border-radius: 5%;
+}
+
+.row-justify-content-xl-center{
+    margin-top: 50px;
+    padding-left: 150px;
+}
+.mb-3{
+    color:#90bac2
+}
+
+.mb-4{
+    color:#90bac2;
+    padding-top: 20px;
+}
+.about-us-page{
     background-color: #282c34; /* Assuming a dark background, change as necessary */
     color: #ffffff; /* Light text color for contrast */
+    padding-left: 400px;
+    padding-right: 400px;
 }
 
-/* Hero Banner */
-.about-us-hero {
-    display: flex;
-    justify-content: center; /* Horizontally center the content */
-    align-items: center; /* Vertically center the content */
-    text-align: center; /* Center the text inside the div */
-    background-size: cover;
-    background-position: center;
-    padding: 60px 20px;
-}
-
-.hero-title {
-    color: #FFD700; /* Gold color for better visibility, adjust based on preference */
-    background-color: rgba(0, 0, 0, 0.5); /* Keeping the semi-transparent background for contrast */
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: -20px; /* Adjust based on your actual hero image and desired effect */
-    font-size: 2.5em;
-}
-
-/* Content Sections */
-.about-us-content {
-    padding: 40px 20px;
-    background-color: #333; /* Dark background for the content area */
-    color: #eee; /* Lighter text for readability */
-}
-
-.about-us-intro, .about-us-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.intro-image, .member-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
-}
-
-/* Team Section */
-.team-members {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout for team members */
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #FFD700; /* Adjust the color for team member names for better visibility */
-}
-
-.member-image {
-    width: 150px; /* Adjust as necessary */
-    height: 150px; /* Adjust to ensure images are uniformly sized */
-    object-fit: cover; /* Ensure the image covers the space without distortion */
-    border-radius: 50%; /* Circular images for team members */
-    margin-bottom: 10px;
-}
-
-h2, h3 {
-    margin: 10px 0;
-    color: #FFD700; /* Ensure headers are easily readable against the dark background */
+.text-secondary-mb-0 {
+    color: #b4c2c5; /* Light gray color */
 }

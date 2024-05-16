@@ -7,7 +7,7 @@ import {
   equalTo,
   onValue,
 } from "firebase/database";
-import Header from "../HeaderComponents/UserHeader";
+import Header from "../HeaderComponents/Header";
 import { Link } from "react-router-dom";
 //import "./UserDashboard.css";
 

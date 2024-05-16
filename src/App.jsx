@@ -13,6 +13,11 @@ import CheckIn from './Pages/CheckIn.jsx';
 import { AuthProvider } from './contexts/AuthContext.jsx';
 import CreateBusinessProfile from './Dashboard/CreateBusinessProfile.jsx';
 import DietitianDashBoard from './Dashboard/DietitianDashboard.jsx';
+
+import UserDashBoard from './Pages/UserDashboard.jsx';
+import CreateUserProfile from './Pages/CreateUserProfile.jsx';
+/* don't delete this import */
+import './App.css';
 import SignUpForm from './AuthenticationPage/SignUpForm.jsx';
 import CreateRecipe from './Dashboard/CreateRecipes.jsx';
 
@@ -40,6 +45,8 @@ function App()
         <Route path="/GuestViewFood" element={<GuestViewFood />} />
         <Route path="/CheckIn" element={<CheckIn />} />
         <Route path="/DietitianDashBoard" element={<DietitianDashBoard />} />
+        <Route path="/UserDashBoard" element={<UserDashBoard />} />
+        <Route path="/CreateUserProfile" element={<CreateUserProfile />} />
         <Route path="/CreateBusinessProfile" element={<CreateBusinessProfile />} />
         <Route path="/CreateRecipe" element={<CreateRecipe />} />
         {/* Add more routes as needed */}

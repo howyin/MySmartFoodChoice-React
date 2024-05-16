@@ -29,7 +29,7 @@ export const HomePage = () =>
     */
                 /* add more here in this home page, you can see each components */
     return (
-        <div>
+        <div className="home-page">
             <center>
                 {/* add more here */}
                 <Header/>

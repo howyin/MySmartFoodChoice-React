@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import { RiUser3Line } from "react-icons/ri";
 import { getDatabase, ref, query, onValue } from "firebase/database";
-import HomeLogo from '../assets/home2.svg'; 
+import HomeLogo from '../assets/myfoodchoicelogo.png';
 import { useNavigate } from "react-router-dom";
 
 function UserHeader() {
@@ -46,14 +46,15 @@ function UserHeader() {
   return (
     <nav className="nav">
       <div className="header-content">
-      <Link to="/">
-                    <img src={HomeLogo} alt="Home" style={{ width: '50px', height: '50px' }} />
-                </Link>
-        <li></li>
-        <h1 className='title'> Smart Food Choice</h1>
         <ul className="nav-links">
-          <li></li>
-          <li></li>
+          <li>
+            <Link to="/">
+              <img src={HomeLogo} alt="Home" style={{ width: '50px', height: '50px' }} />
+            </Link>
+          </li>
+          <li>
+            <h1 className='title'>SmartFoodChoice</h1>
+          </li>
           <li>
             <Link to="/RoyaltyPoints">Royalty points</Link>
           </li>
@@ -66,33 +67,32 @@ function UserHeader() {
           <li>
             <Link to="/AboutUs">About Us</Link>
           </li>
-          <li onClick={handleLogout} style={{ cursor: "pointer" ,color:'#fff'}}>
-            Logout
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li className="avatar-dropdown">
-            <li></li>
-            <li></li>
-            <Link to="/CreateUserProfile" className="avatar-icon">
-              {loading ? (
-                <p>Loading image...</p>
-              ) : profilePicture ? (
-                <img
-                  src={profilePicture}
-                  height={50}
-                  width={50}
-                  style={{ borderRadius: "50%" }}
-                />
-              ) : (
-                <RiUser3Line />
-              )}
-            </Link>
-          </li>
         </ul>
+      </div>
+      <div className="login-section">
+        <li className="avatar-dropdown">
+          <Link to="#" className="avatar-icon">
+            {loading ? (
+              <p>Loading image...</p>
+            ) : profilePicture ? (
+              <img
+                src={profilePicture}
+                height={50}
+                width={50}
+                style={{ borderRadius: "50%" }}
+                alt="Profile"
+              />
+            ) : (
+              <RiUser3Line />
+            )}
+          </Link>
+          <div className="dropdown-content">
+            <Link to="#" onClick={handleLogout}>Logout</Link>
+          </div>
+        </li>
       </div>
     </nav>
   );
 }
+
 export default UserHeader;

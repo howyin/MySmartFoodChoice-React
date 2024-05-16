@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Header from "../HeaderComponents/UserHeader";
+import Header from "../HeaderComponents/Header";
 import { getDatabase, ref, set, query, onValue } from "firebase/database";
 import { useNavigate } from "react-router-dom";
 import { getDownloadURL, ref as sRef } from "firebase/storage";
