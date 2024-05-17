@@ -1,39 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { collection, addDoc } from "firebase/firestore";
-import { Link, useNavigate } from 'react-router-dom'; // Consolidated import for useNavigate
+import { useNavigate } from 'react-router-dom';
 import './ReviewForm.css';
 import Header from '../HeaderComponents/Header';
 import { db } from "../Firebase/Firebase";
+import { useAuth } from '../contexts/AuthContext';
 
 function ReviewForm() 
 {
+    const { isLoggedIn } = useAuth();
     const [review, setReview] = useState('');
     const [rating, setRating] = useState(5);
-    const [error, setError] = useState(''); // Error state
-    const [showSuccessMessage, setShowSuccessMessage] = useState(false); // Success message state
-    const navigate = useNavigate(); // Hook for navigation
+    const [error, setError] = useState('');
+    const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+    const [showLoginMessage, setShowLoginMessage] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+            setShowLoginMessage(true);
+            setTimeout(() => {
+                setShowLoginMessage(false);
+                navigate('/SignIn');
+            }, 3000); // Show the message for 3 seconds before redirecting
+        }
+    }, [isLoggedIn, navigate]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             await addDoc(collection(db, "Reviews"), {
                 comment: review,
-                rating: parseInt(rating, 10), // Convert rating to an integer
+                rating: parseInt(rating, 10),
                 timestamp: new Date()
             });
             console.log("Review submitted successfully");
-            setShowSuccessMessage(true); // Show success message
-        
-            // Hide the message and redirect after 5 seconds
+            setShowSuccessMessage(true);
+
             setTimeout(() => {
-                setShowSuccessMessage(false); // Hide the success message
-                navigate('/'); // Navigate to the homepage
+                setShowSuccessMessage(false);
+                navigate('/');
             }, 5000);
         } catch (err) {
             console.error("Error submitting review: ", err);
             setError("Failed to submit review. Please try again.");
         }
     };
+
+    if (!isLoggedIn) {
+        return (
+            <>
+                <Header />
+                <div className="form-container">
+                    {showLoginMessage && <div className="login-message">Please log in to leave a review. Redirecting to login page...</div>}
+                </div>
+            </>
+        );
+    }
 
     return (
         <>
